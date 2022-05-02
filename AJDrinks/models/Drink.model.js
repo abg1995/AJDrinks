@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const drinksSchema =new Schema( {
+const drinksSchema = new Schema( {
         name:{
             type: String,
             required: true,
@@ -16,6 +16,7 @@ const drinksSchema =new Schema( {
         brewer: {
             type:String,
         },
+        category: String,
         image: String,
 
 }

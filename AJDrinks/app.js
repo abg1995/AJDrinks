@@ -15,13 +15,21 @@ const hbs = require("hbs");
 
 const app = express();
 
+require('./config/session.config')(app);
+
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
 const capitalized = require("./utils/capitalized");
-const projectName = "AJDrinks";
+const projectName = "ajdrinks";
 
 app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
+
+app.use((req,res,next) => {
+    res.locals.session = req.session;   //allow access to session data from layout.hbs 
+    next()
+})
 
 // 👇 Start handling routes here
 const index = require("./routes/index.routes");
