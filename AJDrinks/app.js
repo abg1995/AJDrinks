@@ -36,10 +36,10 @@ const index = require("./routes/index.routes");
 app.use("/", index);
 
 const authRoutes = require("./routes/auth.routes");
-app.use("/auth", authRoutes);
+app.use("/", authRoutes);
 
 const drinkRoutes = require("./routes/drink.routes");
-app.use("/drinks", drinkRoutes);
+app.use("/", drinkRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
