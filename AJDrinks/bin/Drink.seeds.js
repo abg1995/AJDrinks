@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-//const Brewer = require();
+// const Brewer = require();
 const Drink = require('../models/Drink.model');
 
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/ajdrinks';
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/AJDrinks';
 
 mongoose
   .connect(MONGO_URI)
