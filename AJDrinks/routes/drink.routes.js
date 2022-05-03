@@ -57,9 +57,23 @@ router.post("/drinks/create", (req,res,next) => {
 
 });
 
+edit route
 
 
-//router.get("/")
+
+
+//DINAMIC ROUTE PUSH THEM DOWN
+
+router.get("/drinks/:drink",  isLoggedIn, (req,res,next) => {
+  const drink = req.params.drink;
+
+  Drink.find({category: drink})
+    .then( (drinkArr) => {
+      console.log(drinkArr)
+      res.render("drinks/drinks", {drinks: drinkArr})
+    })
+    .catch()
+})
 
 
 
