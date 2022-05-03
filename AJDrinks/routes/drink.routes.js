@@ -70,12 +70,28 @@ router.get("/drinks/:drink",  isLoggedIn, (req,res,next) => {
 
   Drink.find({category: drink})
     .then( (drinkArr) => {
-      console.log(drinkArr)
       res.render("drinks/drinks", {drinks: drinkArr, category: drinkArr[0].category})
     })
-    .catch()
+    .catch(err => {
+      console.log("error on dynamic route drinks", err);
+      next(err);
+    })
 })
 
+
+
+router.get("/drinks/:drink/drink-details", isLoggedIn, (req,res,next) => {
+
+  const id = req.params.drink;
+
+  Drink.findById(id)
+  .then( (drinkArr) => {
+    res.send("hello test")
+   // res.render("drinks/drink-details", {drinks: drinkArr, category: drinkArr[0].category})
+  })
+  .catch( err => console.log("error on drink details get route"), err)
+  next(err);
+})
 
 // DELETE ROUTE
 
