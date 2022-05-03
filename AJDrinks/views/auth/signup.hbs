@@ -1,4 +1,57 @@
-<form action="/signup" method="POST">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin">
+  <form class="px-5 pt-5" action="/signup" method="POST">
+    <img class="mb-4" src="/images/Logo/1.jpg" alt="logo" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">Please Register</h1>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+<br>
+    <button class="w-10 btn btn-lg btn-primary" type="submit">Register</button>
+    <p class="mt-5 mb-3 text-muted">&copy; AJDrink & CO all rights reserved</p>
+  </form>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <form action="/signup" method="POST">
    <label> Username
       <input type="text" name="username">
    </label>
@@ -7,7 +60,7 @@
    </label>
 
    <button type="submit">Submit</button>
-</form>
+</form> --}}
 
 {{#if errorMessage}}
    {{errorMessage}}
