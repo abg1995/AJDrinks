@@ -47,16 +47,12 @@
             
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/logout">Log out</a>
-        </li>
-         {{#if session.currentUser}}
+       
+         {{#if session.user}}
                <a class="nav-link active" aria-current="page" href="/user-profile">Profile Page</a> 
-               <form action="/logout" method="POST">
-                <button>Logout</button>
-             </form>            
+              <a class="nav-link" href="/logout">Log out</a>          
             {{else}}
-           &nbsp;&nbsp;|||||||||   <a class="nav-link active" aria-current="page" href="/signup">Register</a> &nbsp;&nbsp;|||||||||
+&nbsp;&nbsp;|||||||||<a class="nav-link active" aria-current="page" href="/signup">Register</a> &nbsp;&nbsp;|||||||||
                <a class="nav-link active" aria-current="page" href="/login">Login</a>            
             {{/if}}
       </ul>

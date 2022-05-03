@@ -18,17 +18,24 @@ router.get("/drinks", (req,res,next) => {
 
 //CREATE ROUTES
 
-//  isLoggedIn,
+//GET ROUTE 
 
-router.get("/drinks/create",  (req,res,next) => {
+router.get("/drinks/create", isLoggedIn, (req,res,next) => {
+
+  if(!req.session.user){
+    res.redirect("/login")
+  }else if (req.session.user){
   Drink.find()
-
+    
     .then((drinkArr) => {
       res.render("drinks/drink-create", {drinks: drinkArr});
     })
     .catch((err) => {console.log("error on get create form route", err)
       next(err)})
+  }
 })
+
+//POST CREATE ROUTE
 
 router.post("/drinks/create", (req,res,next) => {
     const newDrink = {
@@ -49,6 +56,13 @@ router.post("/drinks/create", (req,res,next) => {
       });
 
 });
+
+
+
+//router.get("/")
+
+
+
 
 module.exports = router;
 
