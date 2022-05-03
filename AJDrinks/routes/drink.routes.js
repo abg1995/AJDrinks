@@ -4,6 +4,7 @@ const Drink = require("../models/Drink.model")
 //const Brewer = require();
 const isLoggedIn = require("../middleware/isLoggedIn");
 const isLoggedOut = require("../middleware/isLoggedOut");
+const isAdmin = require("../middleware/isAdmin");
 
 //READ ROUTES
 router.get("/drinks", (req,res,next) => {
@@ -75,6 +76,20 @@ router.get("/drinks/:drink",  isLoggedIn, (req,res,next) => {
     .catch()
 })
 
+
+// DELETE ROUTE
+
+router.post("/drinks/:drink/delete", isAdmin, (req, res, next) => {
+
+  const id = req.params.drink;
+
+  Drink.findByIdAndRemove(id)
+    .then(() => {
+      alert("Drink Removed");
+      res.redirect("/drinks");
+    })
+    .catch((err) => console.log("error deleting from DB: ", err));
+});
 
 
 
