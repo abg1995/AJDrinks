@@ -1,14 +1,15 @@
 
+<h1>{{req.params.drink.category}}</h1>
+
 
 {{#each drinks}}
-    <h1>{{this.category}}</h1>
-
-<section class="wines">
+    
+<br>
+<section class="drinks">
         <h2>{{this.name}}</h2>
         <h4>{{this.description}}</h4>
         <h6>{{this.rating}}</h6>
         <h4>{{this.brewer}}</h4>
-                {{!-- <h4> {{this.category}}</h4> --}}
         <a href="">More Details</a>
 </section>
 
