@@ -40,19 +40,22 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown link
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> &nbsp;&nbsp;|||||||||
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
             
           </ul>
         </li>
-         <li class="nav-item">
-          <a class="nav-link" href="/user-profile">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/user-profile">Log out</a>
-        </li>
+         {{#if session.currentUser}}
+               <a class="nav-link active" aria-current="page" href="/user-profile">Profile Page</a> 
+               <form action="/logout" method="POST">
+                <button>Logout</button>
+             </form>            
+            {{else}}
+           &nbsp;&nbsp;|||||||||   <a class="nav-link active" aria-current="page" href="/signup">Register</a> &nbsp;&nbsp;|||||||||
+               <a class="nav-link active" aria-current="page" href="/login">Login</a>            
+            {{/if}}
       </ul>
     </div>
     <img  src="/images/Logo/1.jpg" alt="Logo">

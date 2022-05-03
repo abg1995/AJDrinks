@@ -22,15 +22,32 @@ router.get("/drinks", (req,res,next) => {
 
 router.get("/drinks/create",  (req,res,next) => {
   Drink.find()
+
     .then((drinkArr) => {
-      res.send("hello there")
-     // res.render ("drinks/drinks-create", {drinks: drinkArr});
+      res.render("drinks/drink-create", {drinks: drinkArr});
     })
-    .catch(err => {console.log("error on get create form route", err)
+    .catch((err) => {console.log("error on get create form route", err)
       next(err)})
 })
 
-router.post("/drinks/create", (req,res,next) => {})
+router.post("/drinks/create", (req,res,next) => {
+    const newDrink = {
+      name: req.body.name,
+      description: req.body.description,
+      rating: req.body.rating,
+      category:req.body.category,
+      image: req.body.image
+    };
+    Drink.create(newDrink)
+      .then( (drinkFromDB) => {
+        res.redirect("/drinks")
+      })
+      .catch((err) => {
+        console.log("error adding drink in post route", err);
+        next(err);
+      });
+
+});
 
 module.exports = router;
 
