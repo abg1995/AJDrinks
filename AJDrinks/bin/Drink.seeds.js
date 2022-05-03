@@ -22,7 +22,7 @@ mongoose
         description: 'a japanese gin created with 6 botanicals hence the name roku meaning 6 in japanese',
         rating: 8,
         brewer: 'Suntory',
-        category: 'Gin',
+        category: 'gin',
         image: ''
     },
     {
@@ -30,7 +30,7 @@ mongoose
         description: 'Mexican tequila curated for 2 years in barrel giving you a nice transparent color',
         rating: 7,
         brewer: 'Patron',
-        category: 'Tequila',
+        category: 'tequila',
         image: ''
     },
     {

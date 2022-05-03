@@ -62,15 +62,15 @@ router.post("/drinks/create", (req,res,next) => {
 
 
 
-//DINAMIC ROUTE PUSH THEM DOWN
+//DYNAMIC ROUTE PUSH THEM DOWN
 
 router.get("/drinks/:drink",  isLoggedIn, (req,res,next) => {
-  const drink = req.params.drink;
+  const drink = req.params.drink.toUpperCase();
 
   Drink.find({category: drink})
     .then( (drinkArr) => {
       console.log(drinkArr)
-      res.render("drinks/drinks", {drinks: drinkArr})
+      res.render("drinks/drinks", {drinks: drinkArr, category: drinkArr[0].category})
     })
     .catch()
 })
