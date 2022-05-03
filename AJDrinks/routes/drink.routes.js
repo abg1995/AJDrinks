@@ -36,6 +36,7 @@ router.post("/drinks/create", (req,res,next) => {
       description: req.body.description,
       rating: req.body.rating,
       category:req.body.category,
+      brewer:req.body.brewer,
       image: req.body.image
     };
     Drink.create(newDrink)
