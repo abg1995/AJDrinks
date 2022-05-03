@@ -89,9 +89,16 @@ router.post("/signup", isLoggedOut, (req, res) => {
   });
 });
 
+// router.get("/user-profile", isLoggedIn, (req,res,next) => {
+//   res.send("hello")
+// })
+
+
 router.get("/login", isLoggedOut, (req, res) => {
   res.render("auth/login");
 });
+
+
 
 router.post("/login", isLoggedOut, (req, res, next) => {
   const { username, password } = req.body;
@@ -140,6 +147,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
       // return res.status(500).render("login", { errorMessage: err.message });
     });
 });
+
 
 router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {

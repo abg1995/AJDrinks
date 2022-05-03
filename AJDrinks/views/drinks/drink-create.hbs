@@ -1,1 +1,26 @@
-form for adding drinks 
+<h2>Adda Drink</h2>
+
+<form action="/drinks/create" method="POST">
+  <label> Title:
+    <input type="text" name="title" required/>
+  </label>
+
+  <label> Author:
+    <select name="author">
+    {{#each authors}}
+   <option value="{{this._id}}">{{this.name}}</option> 
+    {{/each}}
+    </select>
+
+  </label>
+
+  <label> Description:
+    <textarea name="description" cols="30" rows="4"> </textarea>
+  </label>
+
+  <label> Rate:
+    <input type="number" name="rating" min="1" max="10" />
+  </label>
+
+  <button type="submit"> Create </button>
+</form>
