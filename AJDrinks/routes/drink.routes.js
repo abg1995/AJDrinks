@@ -11,11 +11,43 @@ router.get("/drinks", (req,res,next) => {
       Drink.find()
         .then((arr) => {
             res.render("drinks/drink-category",arr)
-            console.log("sending signal")
         })
         .catch(err => console.log('error on drink read route', err))
 })
 
+//ABOUT US ROUTE 
+
+router.get("/about-us", (req,res,next) => {
+    Drink.find()
+      .then(( ) => {
+        res.render("about-us")
+      })
+      .catch(err => console.log('error on about us read route', err))
+})
+
+
+//CONTACT US ROUTE
+
+router.get("/contact", (req,res) => {
+    Drink.find()
+      .then( () => {
+        res.render("contact-us")
+      })
+      .catch(err => console.log('error on contact us read route', err))
+
+})
+
+
+//PROFILE PAGE ROUTE
+
+router.get("/auth/user", isLoggedIn, (req,res) => {
+  Drink.find()
+    .then( () => {
+      res.render("auth/user-profile")
+    })
+    .catch(err => console.log('error on contact us read route', err))
+
+})
 
 //CREATE ROUTES
 
@@ -23,9 +55,6 @@ router.get("/drinks", (req,res,next) => {
 
 router.get("/drinks/create", isLoggedIn, (req,res,next) => {
 
-  if(!req.session.user){
-    res.redirect("/login")
-  }else if (req.session.user){
   Drink.find()
     
     .then((drinkArr) => {
@@ -33,7 +62,7 @@ router.get("/drinks/create", isLoggedIn, (req,res,next) => {
     })
     .catch((err) => {console.log("error on get create form route", err)
       next(err)})
-  }
+  
 })
 
 //POST CREATE ROUTE
