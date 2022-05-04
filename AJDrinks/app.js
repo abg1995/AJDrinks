@@ -41,6 +41,9 @@ app.use("/", authRoutes);
 const drinkRoutes = require("./routes/drink.routes");
 app.use("/", drinkRoutes);
 
+const userRoutes = require("./routes/user.routes");
+app.use("/", userRoutes); 
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
