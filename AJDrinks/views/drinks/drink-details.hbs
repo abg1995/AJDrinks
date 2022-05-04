@@ -1,19 +1,19 @@
-
-<div class="card" style="width: 18rem;">
-  <img src={{drinks.image}} class="card-img-top" alt="...">
-  <div class="card-body">
+<div class="px-5 my-5 bg-dark">
+<div class="card " style="width: 50rem;">
+  <img src={{drinks.image}} class="card-img-top" alt="image">
+  <div class="card-body bg-danger">
     <h5 class="card-title">{{drinks.name}}</h5>
     <p class="card-text">{{drinks.description}}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{drinks.brewer}}</li>
-    <li class="list-group-item">{{drinks.rating}} out of 10</li>
-    <li class="list-group-item">{{drinks.category}}</li>
+    <li class="list-group-item">Company : {{drinks.brewer}}</li>
+    <li class="list-group-item">Rating : {{drinks.rating}} out of 10</li>
+    <li class="list-group-item">Category : {{drinks.category}}</li>
   </ul>
   <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
 <form action="/drinks/{{drinks._id}}/delete" method="POST">
-  <button type="submit">Delete</button>
+ <button type="button" class="btn btn-outline-danger">Delete</button>
 </form>  
+</div>
 </div>
 </div>
