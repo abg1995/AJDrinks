@@ -90,8 +90,45 @@ router.get("/drinks/:drink/drink-details", isLoggedIn, (req,res,next) => {
     res.render("drinks/drink-details" ,{drinks: drinkArr})
   })
   .catch( (err) => {console.log("error on drink details get route", err)})
-  //next(err);
 })
+
+//EDIT ROUTE 
+
+router.get("/drinks/:drink/edit", isLoggedIn, (req,res,next) => {
+
+  const id = req.params.drink;
+
+    Drink.findById(id)
+      .then( (drinkArr) => {
+        res.render("drinks/drink-edit", {drinks: drinkArr})
+      })
+      .catch((err) => {
+        console.log("Error on get route for edit drinks", err);
+      })
+
+})
+
+router.post("/drinks/:drink/edit", isLoggedIn, (req,res,next) => {
+
+  const id = req.params.drink;
+
+
+  const newInfo = {
+    name: req.body.name,
+    description: req.body.description,
+    rating: req.body.rating,
+    brewer: req.body.brewer,
+    category: req.body.category
+  }
+
+  Drink.findByIdAndUpdate(id, newInfo)
+    .then( (drinkFromDB) => {
+        res.redirect(`/drinks`);
+    })
+    .catch( (err) => { console.log("error on POST rout of edit", err)})
+
+})
+
 
 // DELETE ROUTE
 

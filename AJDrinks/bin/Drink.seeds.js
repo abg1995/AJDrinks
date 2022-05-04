@@ -22,7 +22,7 @@ mongoose
         description: 'a japanese gin created with 6 botanicals hence the name roku meaning 6 in japanese',
         rating: 8,
         brewer: 'Suntory',
-        category: 'gin',
+        category: 'GIN',
         image: ''
     },
     {
@@ -30,7 +30,7 @@ mongoose
         description: 'Mexican tequila curated for 2 years in barrel giving you a nice transparent color',
         rating: 7,
         brewer: 'Patron',
-        category: 'tequila',
+        category: 'TEQUILA',
         image: ''
     },
     {
@@ -38,7 +38,7 @@ mongoose
         description: 'Single malt scotch whiskey aged for 10 years in barrel',
         rating: 9,
         brewer: 'Talisker',
-        category: 'whiskey',
+        category: 'WHISKEY',
         image: ''
     },
     {
@@ -46,7 +46,7 @@ mongoose
         description: 'Pure german beer',
         rating: 8,
         brewer: 'unkwon',
-        category: 'beer',
+        category: 'BEER',
         image: ''
     },
     {
@@ -54,7 +54,7 @@ mongoose
         description: 'Spanish wine from Ribiera del duero with a fruity accent',
         rating: 10,
         brewer: 'Torres',
-        category: 'wine',
+        category: 'WINE',
         image: ''
     },
     {
@@ -62,7 +62,7 @@ mongoose
       description: 'Drink this to forget what you do the day of tomorrow',
       rating: 8,
       brewer: '',
-      category: 'vodka',
+      category: 'VODKA',
       image: ''
   }
   
