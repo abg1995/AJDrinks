@@ -1,6 +1,6 @@
 <div class="px-5 my-5 bg-dark">
 <div class="card " style="width: 50rem;">
-  <img src={{drinks.image}} class="card-img-top" alt="image">
+  <img src={{drinks.image}} class="card-img-top image-fluid" alt="image">
   <div class="card-body bg-danger">
     <h5 class="card-title">{{drinks.name}}</h5>
     <p class="card-text">{{drinks.description}}</p>
@@ -12,7 +12,10 @@
   </ul>
   <div class="card-body">
 <form action="/drinks/{{drinks._id}}/delete" method="POST">
- <button type="button" class="btn btn-outline-danger">Delete</button>
+<div class="vstack gap-2 col-md-5 mx-auto">
+  <button type="button" class="btn btn-outline-secondary border border-danger">Delete</button>
+  <button type="button" class="btn btn-outline-secondary border border-success">Edit</button>
+</div>
 </form>  
 </div>
 </div>
