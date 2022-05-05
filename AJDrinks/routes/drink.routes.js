@@ -160,14 +160,13 @@ router.post("/drinks/:drink/edit", isLoggedIn, (req,res,next) => {
 
 
 // DELETE ROUTE
-
-router.post("/drinks/:drink/delete", isAdmin, (req, res, next) => {
+//isAdmin
+router.post("/drinks/:drink/delete", (req, res, next) => {
 
   const id = req.params.drink;
 
   Drink.findByIdAndRemove(id)
     .then(() => {
-      alert("Drink Removed");
       res.redirect("/drinks");
     })
     .catch((err) => console.log("error deleting from DB: ", err));

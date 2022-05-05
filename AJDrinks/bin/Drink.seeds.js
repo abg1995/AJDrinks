@@ -34,36 +34,36 @@ mongoose
         image: ''
     },
     {
-        name: 'Talisker 10',
-        description: 'Single malt scotch whiskey aged for 10 years in barrel',
-        rating: 9,
-        brewer: 'Talisker',
-        category: 'WHISKEY',
-        image: ''
-    },
-    {
-        name: 'Paulaner',
-        description: 'Pure german beer',
+        name: 'Hibiki Whiskey',
+        description: 'Fine japanese whiskey',
         rating: 8,
-        brewer: 'unkwon',
+        brewer: 'Suntory',
+        category: 'WHISKEY',
+        image: 'https://www.labarricavinos.com/wp-content/uploads/2016/06/HIBIKI.jpg'
+    },
+    {
+        name: 'Sapporo Silver',
+        description: 'Pure japanese beer from Sapporo region',
+        rating: 8,
+        brewer: 'Sapporo',
         category: 'BEER',
-        image: ''
+        image: 'https://cdn.shopify.com/s/files/1/0404/8086/6465/products/Sapporo-premium_grande.png?v=1594402980'
     },
     {
-        name: 'Celeste reserva',
-        description: 'Spanish wine from Ribiera del duero with a fruity accent',
-        rating: 10,
-        brewer: 'Torres',
-        category: 'WINE',
-        image: ''
+        name: 'Asahi Super Dry ',
+        description: 'Tasty japanese beer lagger',
+        rating: 9,
+        brewer: 'Asahi Japan',
+        category: 'BEER',
+        image: 'https://www.japonshop.com/img/productos/prd-cerveza-asahi-super-dry-japonshop.jpg'
     },
     {
-      name: 'Grey Goose Vodka',
-      description: 'Drink this to forget what you do the day of tomorrow',
-      rating: 8,
-      brewer: '',
-      category: 'VODKA',
-      image: ''
+      name: 'Captain Morgan',
+      description: 'Nice for cocktails',
+      rating: 6.5,
+      brewer: 'Captain Morgan',
+      category: 'RUM',
+      image: 'https://static.carrefour.es/hd_510x_/img_pim_food/777180_00_1.jpg'
   }
   
   ];

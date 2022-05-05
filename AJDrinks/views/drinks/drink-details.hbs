@@ -14,21 +14,20 @@
 
 
 
-    {{#if req.admin}}
-<form action="/drinks/{{drinks._id}}/delete" method="POST">
-<div class="vstack gap-2 col-md-5 mx-auto">
+    {{#if isAdmin}}
 
-    <button type="button" class="btn btn-outline-secondary border border-danger"> Delete </button>
+<div class="vstack gap-2 col-md-5 mx-auto">
+ <form action="/drinks/{{drinks._id}}/delete" method="POST">
+  <button class="btn btn-outline-secondary border border-danger"> Delete </button>
+  </form>
 </div>
-</form>  
+  
     {{/if}}
 
 
-
-{{!-- <form action="/drinks/{{drinks._id}}/edit" method="POST"> --}}
 <div class="vstack gap-2 col-md-5 mx-auto">
 <a href="/drinks/{{drinks._id}}/edit"> <button type="button" class="btn btn-outline-secondary border border-success"> Edit </button> </a> 
-{{!-- </form> --}}
+
 </div>
 </div>
 </div>
