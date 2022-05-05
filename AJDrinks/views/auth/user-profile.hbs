@@ -1,10 +1,14 @@
 
-<div>
+<div class="px-5 mx-5 my-5">
 
-    {{#each User}}
-<h2>{{username}} </h2>
+    {{#if session.user}}
+    <h1 class="px-5 mx-5 my-5">Profile</h1>
+
+<h2>Your user name : {{session.user.username}} </h2>
 
 
-{{/each}}
+{{else}}
+<p>YOU HAVE TO LOG IN</p>
+{{/if}}
 
 </div>
