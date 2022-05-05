@@ -17,8 +17,9 @@
 
 <header>
     <nav>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
   <div class="container-fluid">
+    <img  src="/images/Logo/1.jpg" alt="Logo">
     <a class="navbar-brand" href="/"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -38,16 +39,16 @@
           <a class="nav-link" href="/contact">Contact</a>
         </li>
        
-         {{#if session.user}}
-               <a class="nav-link active" aria-current="page" href="/user-profile">Profile Page</a> 
-              <a class="nav-link" href="/logout">Log out</a>          
-            {{else}}
-&nbsp;&nbsp;<a class="nav-link active" aria-current="page" href="/signup">Register</a>
-               <a class="nav-link active" aria-current="page" href="/login">Login</a>            
-            {{/if}}
+ 
       </ul>
     </div>
-    <img  src="/images/Logo/1.jpg" alt="Logo">
+            {{#if session.user}}
+             <button type="button" class="btn btn-outline-success"><a  href="/user-profile">Profile Page</a></button>
+               <button type="button" class="btn btn-outline-danger"><a  href="/logout">Log out</a></button>      
+            {{else}}
+&nbsp;&nbsp;<button type="button" class="btn btn-outline-success"><a class="nav-link active" aria-current="page" href="/signup">Register</a>    </button>
+               <button type="button" class="btn btn-outline-success"><a class="nav-link active" aria-current="page" href="/login">Login</a></button>            
+            {{/if}}
   </div>
 </nav>
     </nav>
