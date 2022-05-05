@@ -10,10 +10,15 @@ const userSchema = new Schema(
       trim: true
     },
     password: String,
+    admin: {
+      type: Boolean,
+      default: false,
+        }
   },
   {
     timestamps: true,
-  }
+  },
+  
 );
 
 const User = model("User", userSchema);
