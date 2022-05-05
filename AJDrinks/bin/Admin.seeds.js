@@ -20,8 +20,8 @@ mongoose
 
   const mainuser = 
     {
-    username: "admin", 
-    password: "admin",
+    username: "helo@helo.com", 
+    password: "helohelo",
     admin: true
   }
 ;

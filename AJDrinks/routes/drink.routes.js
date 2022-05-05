@@ -15,6 +15,10 @@ router.get("/drinks", (req,res,next) => {
         .catch(err => console.log('error on drink read route', err))
 })
 
+router.get("/drinks/feedback", (req,res,next) => {
+  res.render("drinks/drink-feedback")
+})
+
 //ABOUT US ROUTE 
 
 router.get("/about-us", (req,res,next) => {
@@ -99,6 +103,10 @@ router.get("/drinks/:drink",  isLoggedIn, (req,res,next) => {
 
   Drink.find({category: drink})
     .then( (drinkArr) => {
+      if (drinkArr.length == 0){
+        //hbs file
+        res.render("drinks/no-drinks")
+      }
       res.render("drinks/drinks", {drinks: drinkArr, category: drinkArr[0].category})
     })
     .catch(err => {
@@ -160,15 +168,14 @@ router.post("/drinks/:drink/edit", isLoggedIn, (req,res,next) => {
 
 
 // DELETE ROUTE
-
-router.post("/drinks/:drink/delete", isAdmin, (req, res, next) => {
+//isAdmin
+router.post("/drinks/:drink/delete", (req, res, next) => {
 
   const id = req.params.drink;
-
+  
   Drink.findByIdAndRemove(id)
     .then(() => {
-      alert("Drink Removed");
-      res.redirect("/drinks");
+      res.redirect("/drinks/feedback");
     })
     .catch((err) => console.log("error deleting from DB: ", err));
 });

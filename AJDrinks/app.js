@@ -27,7 +27,9 @@ const projectName = "AJDrinks";
 app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 
 app.use((req,res,next) => {
-    res.locals.session = req.session;   //allow access to session data from layout.hbs 
+    res.locals.session = req.session;
+    req.app.locals.isAdmin = req.session.isAdmin
+    //allow access to session data from layout.hbs 
     next()
 })
 
