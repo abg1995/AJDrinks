@@ -12,16 +12,23 @@
   </ul>
   <div class="card-body">
 
+
+
+    {{#if req.admin}}
 <form action="/drinks/{{drinks._id}}/delete" method="POST">
 <div class="vstack gap-2 col-md-5 mx-auto">
-  <button type="button" class="btn btn-outline-secondary border border-danger"> Delete </button>
+
+    <button type="button" class="btn btn-outline-secondary border border-danger"> Delete </button>
 </div>
 </form>  
+    {{/if}}
 
-<form action="/drinks/{{drinks._id}}/edit" method="POST">
+
+
+{{!-- <form action="/drinks/{{drinks._id}}/edit" method="POST"> --}}
 <div class="vstack gap-2 col-md-5 mx-auto">
- <button type="button" class="btn btn-outline-secondary border border-success"> Edit </button>
-</form>
+<a href="/drinks/{{drinks._id}}/edit"> <button type="button" class="btn btn-outline-secondary border border-success"> Edit </button> </a> 
+{{!-- </form> --}}
 </div>
 </div>
 </div>
