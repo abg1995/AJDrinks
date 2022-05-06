@@ -6,28 +6,28 @@
   <div class="row mb-3">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
     <div class="col-sm-5">
-      <input type="text-area" class="form-control" id="inputEmail3" name="name" value="{{drinks.name}}"/>
+      <input type="text-area" class="form-control" id="inputEmail3" name="name" required="required" value="{{drinks.name}}"/>
     </div>
   </div>
 
   <div class="row mb-3">
     <label class="col-sm-2 col-form-label">Description</label>
     <div class="col-sm-5">
-      <textarea type="text-area" class="form-control" id="inputPassword3" name="description"> {{drinks.description}}</textarea>
+      <textarea type="text-area" class="form-control" id="inputPassword3" required="required" name="description"> {{drinks.description}}</textarea>
     </div>
   </div>
 
   <div class="row mb-3">
     <label class="col-sm-2 col-form-label">Rating</label>
     <div class="col-sm-5">
-      <input type="number" class="form-control" id="inputPassword3" name="rating" value="{{drinks.rating}}"/>
+      <input type="number" class="form-control" id="inputPassword3" min="1" max="10" required="required" name="rating" value="{{drinks.rating}}"/>
     </div>
   </div>
 
   <div class="row mb-3">
     <label class="col-sm-2 col-form-label">Brewer/Company</label>
     <div class="col-sm-5">
-      <input type="text-area" class="form-control" id="inputPassword3" name="brewer" value="{{drinks.brewer}}"/>
+      <input type="text-area" class="form-control" id="inputPassword3" name="brewer" required="required" value="{{drinks.brewer}}"/>
     </div>
   </div>
 
