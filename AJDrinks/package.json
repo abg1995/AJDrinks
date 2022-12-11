@@ -1,12 +1,9 @@
 {
-    "homepage": "http://infjay.github.io/AJDrinks",
   "name": "AJDrinks",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "dev": "nodemon server.js"
   },
   "dependencies": {
@@ -23,7 +20,6 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0",
     "nodemon": "^2.0.16"
   }
 }
