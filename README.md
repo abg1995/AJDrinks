@@ -1,4 +1,7 @@
+Update:Heroku suspended free tier hosting! so we are going to migrate soon!
+
 # AJDrinks
+
 live Website : https://ajdrinks.herokuapp.com/
 
 This project is AJ Drinks, a full stack web app where you can create a list of your favorite 
