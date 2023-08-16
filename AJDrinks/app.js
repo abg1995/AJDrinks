@@ -30,7 +30,7 @@ app.use((req,res,next) => {
     res.locals.session = req.session;
     req.app.locals.isAdmin = req.session.isAdmin
     //allow access to session data from layout.hbs 
-    next()
+    next() 
 })
 
 // 👇 Start handling routes here
