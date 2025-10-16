@@ -1,4 +1,4 @@
-Update:Heroku suspended free tier hosting! so we are going to migrate soon!
+Update:Heroku suspended free tier hosting! Migrated into render!
 
 # AJDrinks
 
