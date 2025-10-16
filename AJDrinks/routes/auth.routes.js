@@ -22,12 +22,14 @@ router.post("/signup", isLoggedOut, (req, res) => {
   const { username, password } = req.body;
 
   if (!username) {
+    console.log("no hay user");
     return res.status(400).render("auth/signup", {
       errorMessage: "Please provide your username.",
     });
   }
 
   if (password.length < 8) {
+    console.log("contraseña corta");
     return res.status(400).render("auth/signup", {
       errorMessage: "Your password needs to be at least 8 characters long.",
     });
@@ -49,9 +51,10 @@ router.post("/signup", isLoggedOut, (req, res) => {
   User.findOne({ username }).then((found) => {
     // If the user is found, send the message username is taken
     if (found) {
+      console.log("encontrado");
       return res
         .status(400)
-        .render("auth.signup", { errorMessage: "Username already taken." });
+        .render("auth/signup", { errorMessage: "Username already taken." });
     }
 
     // if user is not found, create a new user - start with hashing the password
@@ -68,18 +71,20 @@ router.post("/signup", isLoggedOut, (req, res) => {
       .then((user) => {
         // Bind the user to the session object
         req.session.user = user;
-       
-        req.session.isAdmin = user.admin
-        
+
+        req.session.isAdmin = user.admin;
+
         res.redirect("/");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
+          console.log("error validadion");
           return res
             .status(400)
             .render("auth/signup", { errorMessage: error.message });
         }
         if (error.code === 11000) {
+          console.log("error 11000");
           return res.status(400).render("auth/signup", {
             errorMessage:
               "Username need to be unique. The username you chose is already in use.",
@@ -96,12 +101,9 @@ router.post("/signup", isLoggedOut, (req, res) => {
 //   res.send("hello")
 // })
 
-
 router.get("/login", isLoggedOut, (req, res) => {
   res.render("auth/login");
 });
-
-
 
 router.post("/login", isLoggedOut, (req, res, next) => {
   const { username, password } = req.body;
@@ -137,11 +139,11 @@ router.post("/login", isLoggedOut, (req, res, next) => {
             errorMessage: "Wrong credentials.",
           });
         }
-      
+
         req.session.user = user;
-        
-        req.session.isAdmin = user.admin
-        
+
+        req.session.isAdmin = user.admin;
+
         // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
         return res.redirect("/user-profile");
       });
@@ -154,7 +156,6 @@ router.post("/login", isLoggedOut, (req, res, next) => {
       // return res.status(500).render("login", { errorMessage: err.message });
     });
 });
-
 
 router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
